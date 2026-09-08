@@ -1,0 +1,64 @@
+READ 1
+LOAD =0
+STORE 2
+STORE 3
+
+A:
+LOAD 1
+JZERO B
+LOAD 2
+ADD =1
+STORE 2
+LOAD 3
+ADD 1
+STORE 3
+READ 1
+JUMP A
+
+B:
+LOAD 3
+DIV 2
+WRITE 2
+WRITE 0
+HALT
+
+//PouЕѕitГ© registre:
+//R1 вЂ“ aktuГЎlne naДЌГ­tanГ© ДЌГ­slo,
+//R2 вЂ“ poДЌet ДЌГ­sel,
+//R3 вЂ“ sГєДЌet ДЌГ­sel,
+//R0 вЂ“ akumulГЎtor, na konci obsahuje priemer.
+
+//Program najprv naДЌГ­ta prvГє hodnotu do registra R1 a vynuluje registre R2 a R3. 
+
+//V cykle sa vЕѕdy skontroluje hodnota v registri R1. Ak je hodnota 0, program prejde na koniec. 
+//Ak hodnota nie je 0, zvГЅЕЎi sa poДЌet v registri R2, hodnota z R1 sa pripoДЌГ­ta k sГєДЌtu v R3 a naДЌГ­ta sa ДЏalЕЎia hodnota do R1.
+
+//Po skonДЌenГ­ cyklu sa sГєДЌet z registra R3 vydelГ­ poДЌtom hodnГґt z registra R2. Program potom vypГ­ЕЎe poДЌet hodnГґt a vypoДЌГ­tanГЅ priemer.
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+//ДЊasovГЎ zloЕѕitosЕҐ
+
+//Pri vГЅpoДЌte zloЕѕitosti pouЕѕГ­vame jednotkovГє zloЕѕitosЕҐnГє mieru, teda kaЕѕdГЎ RAM inЕЎtrukcia mГЎ cenu O(1).
+
+//NajmenЕЎГ­ poДЌet vykonanГЅch inЕЎtrukciГ­ nastane vtedy, keДЏ je na vstupe hneДЏ hodnota 0. V takom prГ­pade sa vykonajГє 4 inЕЎtrukcie inicializГЎcie, potom 2 inЕЎtrukcie v bloku A, kde sa zistГ­ nulovГЎ hodnota, a nakoniec 5 inЕЎtrukciГ­ v bloku B. Spolu je to 11 inЕЎtrukciГ­.
+
+//Ak vstup obsahuje nenulovГ© hodnoty, blok A sa vykonГЎ pre kaЕѕdГє z nich. Jeden celГЅ priechod blokom A obsahuje 10 inЕЎtrukciГ­. Ak oznaДЌГ­me poДЌet nenulovГЅch vstupnГЅch hodnГґt ako n, potom sa tГЅchto 10 inЕЎtrukciГ­ vykonГЎ n-krГЎt.
+
+//CelkovГЅ poДЌet vykonanГЅch inЕЎtrukciГ­ je teda: T(n) = 11 + 10n
+
+//Z toho vyplГЅva, Еѕe ДЌasovГЎ zloЕѕitosЕҐ programu je lineГЎrna: T(n) = O(n)
+
+//PamГ¤ЕҐovГЎ zloЕѕitosЕҐ je O(1), pretoЕѕe program pouЕѕГ­va iba pevnГЅ poДЌet registrov a ich poДЌet nezГЎvisГ­ od veДѕkosti vstupu.
+
+//---------------------------------------------------------------------------------------
+//Pri vypocte zlozitosti pouzivame jednotkovu zlozitostnu mieru, teda kazda RAM instrukcia ma cenu O(1).
+
+//Najmensi pocet vykonanych instrukcii nastane vtedy, ked je na vstupe hned hodnota 0. V takom pripade sa vykonaju 4 instrukcie inicializacie, potom 2 instrukcie v bloku A, kde sa zisti nulova hodnota, a nakoniec 5 instrukcii v bloku B. Spolu je to 11 instrukcii.
+
+//Ak vstup obsahuje nenulove hodnoty, blok A sa vykona pre kazdu z nich. Jeden cely priechod blokom A obsahuje 10 instrukcii. Ak oznacime pocet nenulovych vstupnych hodnot ako n, potom sa tychto 10 instrukcii vykona n-krat.
+
+//Celkovy pocet vykonanych instrukcii je teda: T(n) = 11 + 10n
+
+//Z toho vyplyva, ze casova zlozitost programu je linearna: T(n) = O(n)
+
+//Pamatova zlozitost je O(1), pretoze program pouziva iba pevny pocet registrov a ich pocet nezavisi od velkosti vstupu.
