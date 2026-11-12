@@ -4,6 +4,8 @@ My university exercises in **C, C++, Java and R**, collected during my Applied I
 
 This is a collection of separate assignments rather than one application. The examples show my practice with programming fundamentals, data structures, object-oriented programming and statistics.
 
+Pointers and structures in C were difficult for me to picture at first. Studying how computer memory works helped them make sense, and I eventually worked through the assignments myself. The C example below is one part of that practice. My [xv6 lab work](https://github.com/ZakaGreen/xv6-labs-2026) continues into operating-system concepts, with the coursework also kept on [GitLab](https://gitlab.com/ilushkalubotin/xv6-xliubotin-2026).
+
 ## Start here
 
 | Example | What it covers |
