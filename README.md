@@ -1,3 +1,5 @@
+[English](README.md) · [Slovenčina](README.sk.md) · [Русский](README.ru.md)
+
 # Programming Coursework
 
 My university exercises in **C, C++, Java and R**, collected during my Applied Informatics studies at FEI STU in Bratislava.
